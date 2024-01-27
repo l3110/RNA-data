@@ -1,0 +1,113 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 630,
+            "y": 216
+          },
+          "nodeIndex": "rnacen rnc_locus",
+          "nodeLineageTag": "f292635c-2fa2-4022-a917-7bdd34739a4d",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 921.33332824707031,
+            "y": 0
+          },
+          "nodeIndex": "rnacen ensembl_assembly",
+          "nodeLineageTag": "80a33e8f-a54e-46a2-8dbb-6e3d542d04b1",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "rnacen ensembl_pseudogene_exons",
+          "nodeLineageTag": "f37eb82e-e9df-406c-bf9c-97051055ef31",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 213.12556053811659
+          },
+          "nodeIndex": "rnacen rnc_accession_sequence_region",
+          "nodeLineageTag": "24ea23ba-c5c3-4c69-b993-0793004476fe",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 342,
+            "y": 0
+          },
+          "nodeIndex": "rnacen rnc_sequence_regions",
+          "nodeLineageTag": "0408e2a2-0fc1-4b00-8642-308899c8104d",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1228.7773154904487,
+            "y": 186.65919282511214
+          },
+          "nodeIndex": "rnacen rnc_locus_direct query",
+          "nodeLineageTag": "761c789d-529a-4c3d-9876-9946b1354857",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1229.7368335809406,
+            "y": 0
+          },
+          "nodeIndex": "rnacen ensembl_assembly_direct query_values",
+          "nodeLineageTag": "82e031d7-8719-4ec8-a659-eff7b158c946",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 4
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 99.111111111111114,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

@@ -1,0 +1,1362 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"rnacen rnc_locus\",\"rnacen ensembl_assembly\",\"rnacen rnc_sequence_regions\",\"rnacen ensembl_pseudogene_exons\",\"rnacen rnc_accession_sequence_region\",\"assembly_full_name_filter\",\"rnacen rnc_locus_direct query\",\"rnacen ensembl_assembly_direct query_values\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.124.1805.0 (23.12)"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DaxQueryView_Desktop\",\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "DynamicImprovement": "HighConfidence",
+            "Entities": {
+              "rnacen_ensembl_assembly.common_name": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "rnacen ensembl_assembly",
+                    "ConceptualProperty": "common_name"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Common name": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              }
+            },
+            "Language": "en-US",
+            "Version": "2.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "assembly_full_name_filter",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"a\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "8e08fa07-fcb5-4708-8553-a05064bb068f"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "c835dc02-8386-4ab9-8563-6b6b942dd401",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "assembly_id",
+        "fromTable": "rnacen ensembl_assembly",
+        "toCardinality": "many",
+        "toColumn": "assembly_id",
+        "toTable": "rnacen rnc_sequence_regions"
+      },
+      {
+        "name": "2e5015de-4b26-4d46-b593-6b9bbaf2e074",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "id",
+        "fromTable": "rnacen rnc_sequence_regions",
+        "toColumn": "id",
+        "toTable": "rnacen ensembl_pseudogene_exons"
+      },
+      {
+        "name": "30cff30a-1d90-4e3e-aa29-c2bdfb2f223c",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "assembly_id",
+        "fromTable": "rnacen rnc_sequence_regions",
+        "isActive": false,
+        "toCardinality": "many",
+        "toColumn": "assembly_id",
+        "toTable": "rnacen rnc_locus"
+      },
+      {
+        "name": "4d637221-c4a8-46dc-b438-97e54d6e5a0b",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "assembly_id",
+        "fromTable": "rnacen rnc_locus",
+        "toCardinality": "many",
+        "toColumn": "assembly_id",
+        "toTable": "rnacen ensembl_assembly"
+      },
+      {
+        "name": "d09cc75a-3b23-4258-976c-8674d1722a1b",
+        "fromColumn": "assembly_id",
+        "fromTable": "rnacen rnc_locus_direct query",
+        "toColumn": "assembly_id",
+        "toTable": "rnacen ensembl_assembly_direct query_values"
+      },
+      {
+        "name": "74424fca-3958-4822-ad3d-afa8831d90ee",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "region_id",
+        "fromTable": "rnacen rnc_accession_sequence_region",
+        "toCardinality": "many",
+        "toColumn": "region_id",
+        "toTable": "rnacen ensembl_pseudogene_exons"
+      }
+    ],
+    "sourceQueryCulture": "et-EE",
+    "tables": [
+      {
+        "name": "rnacen rnc_locus",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "393e36f3-a6b7-4778-a5a9-988fcdf1c981",
+            "sourceColumn": "id",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "assembly_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3cab1889-3a27-4779-a1a6-5a4dd52e6730",
+            "sourceColumn": "assembly_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "locus_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "386af204-9fd3-435e-8797-10851b4db2c2",
+            "sourceColumn": "locus_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "public_locus_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c9454c59-6ba1-4088-a4c1-ea3d5bcf8e21",
+            "sourceColumn": "public_locus_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "chromosome",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1a6494b9-2c48-4ef3-afed-8cb1bfab97f4",
+            "sourceColumn": "chromosome",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "strand",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d6ecb956-fbab-49a7-8fa1-c4504efccda7",
+            "sourceColumn": "strand",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "locus_start",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "01a05ced-5f0d-48ce-bef8-e84b777f0c45",
+            "sourceColumn": "locus_start",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "locus_stop",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0cf5929e-d0f1-4c4e-b9c3-a7cbddeba564",
+            "sourceColumn": "locus_stop",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "member_count",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "57090ad3-2f42-418c-9e84-48d72face9af",
+            "sourceColumn": "member_count",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "f292635c-2fa2-4022-a917-7bdd34739a4d",
+        "partitions": [
+          {
+            "name": "rnacen rnc_locus",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"hh-pgsql-public.ebi.ac.uk\", \"pfmegrnargs\"),",
+                "    rnacen_rnc_locus = Source{[Schema=\"rnacen\",Item=\"rnc_locus\"]}[Data]",
+                "in",
+                "    rnacen_rnc_locus"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DateTableTemplate_c8c8eba1-4a5f-4aa7-b560-bbfbf1f9b61d",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "7eae5f56-0854-4599-85a4-768599ede12d",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "72845ddb-0d2c-406c-9b01-d3b61477854b",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "65074a9d-f36e-43f0-b3ed-6933634e119f",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "ffbaf556-aea5-46ca-a495-90de9623f1c4",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "f2716bcf-8812-40a4-89a5-28eb30ce39ec",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "dd04f032-2ff5-4355-81f6-c58964e8d81c",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "6ec021a5-ee6d-4e52-993a-5618b4c78fef",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "b59958d8-007b-40a2-9f5c-c051af400e44",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "c52c1c9b-f292-4a2e-a66e-fffd2a4c206b",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "44e2880e-3162-4044-aaf8-5447c271ef27",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "b4065f55-1750-44a5-8ad6-3e0e45b7bec2",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "6e454981-046d-4e19-aa7a-f312d57efdc4"
+          }
+        ],
+        "isHidden": true,
+        "isPrivate": true,
+        "lineageTag": "b47bee20-43c5-4880-b487-d9b8491d0054",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_c8c8eba1-4a5f-4aa7-b560-bbfbf1f9b61d",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "rnacen ensembl_assembly",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "assembly_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "45289e16-ad7c-4554-bf91-21087da0e145",
+            "sourceColumn": "assembly_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "assembly_full_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "27f1e41a-798a-4bce-b6d7-beaf60d3d200",
+            "sourceColumn": "assembly_full_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "gca_accession",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7edafb75-4c08-4966-acca-cd353fb232f6",
+            "sourceColumn": "gca_accession",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "assembly_ucsc",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "518d7f95-3311-4252-ae01-59a436d22b4a",
+            "sourceColumn": "assembly_ucsc",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "common_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d4a05299-6c5e-4873-911f-1e926e5f91f4",
+            "sourceColumn": "common_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "taxid",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "1a3697a5-bf2d-4061-998d-57cf116f504c",
+            "sourceColumn": "taxid",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ensembl_url",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a781e5c9-3e29-47bb-9ebf-32c4228429f5",
+            "sourceColumn": "ensembl_url",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Division",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7ef9e415-ab71-43b9-82be-65a963489ba9",
+            "sourceColumn": "Division",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "blat_mapping",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "68be1756-58db-4f25-bd2f-279e9b1dacd1",
+            "sourceColumn": "blat_mapping",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "example_chromosome",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a2531af5-8ac9-4eb0-b48c-a896503360c3",
+            "sourceColumn": "example_chromosome",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "example_end",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2731abfe-9fae-49fe-9ec4-9daf629f69fd",
+            "sourceColumn": "example_end",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "example_start",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "fd28c8e0-6eac-4b67-9a1f-54a8c8f86d47",
+            "sourceColumn": "example_start",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "subdomain",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "95e13c00-6790-45df-a2d2-9c28a7fc8082",
+            "sourceColumn": "subdomain",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "selected_genome",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "a7900881-f104-437e-8a1b-1c5343d2e089",
+            "sourceColumn": "selected_genome",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "80a33e8f-a54e-46a2-8dbb-6e3d542d04b1",
+        "measures": [
+          {
+            "name": "Average_locus_length",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR Selected_assembly = SELECTEDVALUE('rnacen ensembl_assembly'[assembly_id])",
+              "VAR Total_locus_length = CALCULATE(SUMX(FILTER('rnacen rnc_locus', 'rnacen rnc_locus'[assembly_id] = Selected_assembly), 'rnacen rnc_locus'[locus_stop] - 'rnacen rnc_locus'[locus_start]))",
+              "VAR Total_locus_count = CALCULATE(COUNTAX(FILTER('rnacen rnc_locus', 'rnacen rnc_locus'[assembly_id] = Selected_assembly), 'rnacen rnc_locus'[id]))",
+              "RETURN",
+              "    DIVIDE(Total_locus_length, Total_locus_count, 0)"
+            ],
+            "lineageTag": "de77fc97-7f19-4ba4-9b54-9914257e7ebb"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "rnacen ensembl_assembly",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"hh-pgsql-public.ebi.ac.uk\", \"pfmegrnargs\"),",
+                "    rnacen_ensembl_assembly = Source{[Schema=\"rnacen\",Item=\"ensembl_assembly\"]}[Data],",
+                "    #\"Renamed Columns\" = Table.RenameColumns(rnacen_ensembl_assembly,{{\"division\", \"Division\"}}),",
+                "    #\"Replaced Value\" = Table.ReplaceValue(#\"Renamed Columns\",\"Ensembl\",\"\",Replacer.ReplaceText,{\"Division\"})",
+                "in",
+                "    #\"Replaced Value\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "rnacen rnc_sequence_regions",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0b43a6e4-1d42-40fb-9651-10f2fc3f5d80",
+            "sourceColumn": "id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "urs_taxid",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5761c6e0-4d19-489b-b50b-b32b79374853",
+            "sourceColumn": "urs_taxid",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "region_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a3a41589-6145-4dfd-b736-09c33d23cbcb",
+            "sourceColumn": "region_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "chromosome",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b470d492-1b44-40f4-bbc6-0926e8343bc2",
+            "sourceColumn": "chromosome",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "strand",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "257f3756-7056-4b33-ba89-03dc3e255903",
+            "sourceColumn": "strand",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "region_start",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a514d07b-91e8-4918-a8a8-7e06b015853d",
+            "sourceColumn": "region_start",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "region_stop",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7688e95b-73c5-4f25-98bd-9a1d568090c1",
+            "sourceColumn": "region_stop",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "assembly_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "83e93b28-3928-49b9-b4c6-b8658dc4d423",
+            "sourceColumn": "assembly_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "was_mapped",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "72b2c938-93d5-40aa-8193-b8e98b6c23d1",
+            "sourceColumn": "was_mapped",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "identity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "dd106d21-22e6-4243-b297-2f2d836d1c58",
+            "sourceColumn": "identity",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "providing_databases",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "342ddf54-663c-4545-8a61-1bf29dd8bd82",
+            "sourceColumn": "providing_databases",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "exon_count",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7865f011-2483-464f-b55a-fff4a5f9fa21",
+            "sourceColumn": "exon_count",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "0408e2a2-0fc1-4b00-8642-308899c8104d",
+        "partitions": [
+          {
+            "name": "rnacen rnc_sequence_regions",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"hh-pgsql-public.ebi.ac.uk\", \"pfmegrnargs\"),",
+                "    rnacen_rnc_sequence_regions = Source{[Schema=\"rnacen\",Item=\"rnc_sequence_regions\"]}[Data]",
+                "in",
+                "    rnacen_rnc_sequence_regions"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "rnacen ensembl_pseudogene_exons",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "234cf573-843d-4c9b-a49e-844db371e522",
+            "sourceColumn": "id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "region_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e7aa6b62-894d-486f-a4ae-aeb8df4f60ae",
+            "sourceColumn": "region_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "exon_start",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "54247c5a-bec5-408a-99a7-2a245b14dd8e",
+            "sourceColumn": "exon_start",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "exon_stop",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e209faa1-18a5-4a43-a872-07c422dca326",
+            "sourceColumn": "exon_stop",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "f37eb82e-e9df-406c-bf9c-97051055ef31",
+        "partitions": [
+          {
+            "name": "rnacen ensembl_pseudogene_exons",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"hh-pgsql-public.ebi.ac.uk\", \"pfmegrnargs\"),",
+                "    rnacen_ensembl_pseudogene_exons = Source{[Schema=\"rnacen\",Item=\"ensembl_pseudogene_exons\"]}[Data]",
+                "in",
+                "    rnacen_ensembl_pseudogene_exons"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "rnacen rnc_accession_sequence_region",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5e8eb8db-a3b6-419f-909a-1f4b68b46071",
+            "sourceColumn": "id",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "accession",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ded09208-8303-4ba8-a024-4fd6a61c0f56",
+            "sourceColumn": "accession",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "region_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "87fbe5f5-80ab-42b4-be1b-80429087d074",
+            "sourceColumn": "region_id",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "24ea23ba-c5c3-4c69-b993-0793004476fe",
+        "partitions": [
+          {
+            "name": "rnacen rnc_accession_sequence_region",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"hh-pgsql-public.ebi.ac.uk\", \"pfmegrnargs\"),",
+                "    rnacen_rnc_accession_sequence_region = Source{[Schema=\"rnacen\",Item=\"rnc_accession_sequence_region\"]}[Data]",
+                "in",
+                "    rnacen_rnc_accession_sequence_region"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "rnacen rnc_locus_direct query",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "3597252b-31bc-4248-9588-f48f349719d4",
+            "sourceColumn": "id",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "assembly_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "f11b1a6d-dd6e-4938-af9b-dda9e8ab4fa4",
+            "sourceColumn": "assembly_id",
+            "sourceProviderType": "nvarchar(max)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "locus_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "d43e5874-d2b7-4268-8067-2f9a50ff7293",
+            "sourceColumn": "locus_name",
+            "sourceProviderType": "nvarchar(max)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "public_locus_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "60e33347-dc42-4a9e-bf84-b71bc59e078a",
+            "sourceColumn": "public_locus_name",
+            "sourceProviderType": "nvarchar(max)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "chromosome",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "e4cf993a-84b1-4af3-9424-090b546f9a94",
+            "sourceColumn": "chromosome",
+            "sourceProviderType": "nvarchar(max)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "strand",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "6053c953-e64d-4ad1-9610-737efe2461de",
+            "sourceColumn": "strand",
+            "sourceProviderType": "nvarchar(max)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "locus_start",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "5d4f9fc0-7088-4337-8d76-d6d3398624d0",
+            "sourceColumn": "locus_start",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "locus_stop",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "8518a1e9-5f0c-406c-b48a-33b4aa3aba45",
+            "sourceColumn": "locus_stop",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "member_count",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "33421d2d-8dfc-4a1f-a127-30b3dacb0767",
+            "sourceColumn": "member_count",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "761c789d-529a-4c3d-9876-9946b1354857",
+        "partitions": [
+          {
+            "name": "rnacen rnc_locus_direct query",
+            "mode": "directQuery",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"hh-pgsql-public.ebi.ac.uk\", \"pfmegrnargs\"),",
+                "    rnacen_rnc_locus = Source{[Schema=\"rnacen\",Item=\"rnc_locus\"]}[Data]",
+                "in",
+                "    rnacen_rnc_locus"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "rnacen ensembl_assembly_direct query_values",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "assembly_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "38791fb3-7da9-41c6-b494-242e96e53532",
+            "sourceColumn": "assembly_id",
+            "sourceProviderType": "nvarchar(max)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "assembly_full_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "5c36c1f0-fef9-4b00-9096-cdde7b65247e",
+            "sourceColumn": "assembly_full_name",
+            "sourceProviderType": "nvarchar(max)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "82e031d7-8719-4ec8-a659-eff7b158c946",
+        "partitions": [
+          {
+            "name": "rnacen ensembl_assembly_direct query_values",
+            "mode": "directQuery",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"hh-pgsql-public.ebi.ac.uk\", \"pfmegrnargs\"),",
+                "    rnacen_ensembl_assembly = Source{[Schema=\"rnacen\",Item=\"ensembl_assembly\"]}[Data],",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(rnacen_ensembl_assembly,{\"assembly_id\", \"assembly_full_name\"})",
+                "in",
+                "    #\"Removed Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
